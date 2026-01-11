@@ -1,0 +1,81 @@
+domains:
+  devex-engineer.de:
+    bing: da59b765836ad9f8cec4ce39d6e9957e
+    google: "google-site-verification=jNr3iDs07EhT2OD--wcxWt21poW0GkO0SwXru0sjwIM"
+    ionos: "zone-ownership-verification-ae3f86dbc3ae14bf9852ee2581f4d90a654db110aaf6d6a97a27de72d5dcb5b9"
+    redirect: true
+  devops-engineer.de:
+    bing: fe5b8472a84ace621f32fa695b0b87db
+    google: "google-site-verification=cSss5UYsBXZbE6O7oJtF4aMMJaGKPEpZmw7qjznB56A"
+    ionos: "zone-ownership-verification-a69e67ebdb9c6571ff06dab3c19a99f713e3e83817748da8641cf9c9aba12d76"
+    redirect: true
+  dx-engineer.de:
+    bing: bcf514ec8030600c72a106af660a7350
+    google: "google-site-verification=bwew9pxvJUgKwUaMuMgOQQ77nXs3CSOAYpsax_J4p3k"
+    ionos: "zone-ownership-verification-c66ae6e059fc20f5b15b34d09376751a56f2812d918299af5ffdf506ab4f50ea"
+    redirect: true
+  escalate4u.de:
+    bing: f2bb57c2e5a948fcb14f9f5008d43eb3
+    google: "google-site-verification=0mbR8sjCbHWrHitJXDEdaa8yn8Yn1sqF1uOgNyBlGQs"
+    ionos: "zone-ownership-verification-4cdcf09fe6c8638a60f06fa2cf03daef03294f625d13b4b9582bbda44cd1b748"
+    redirect: true
+  felix-boerner.de:
+    bing: bb1495cd4591f1bc3616c44e61bfe20b
+    google: "google-site-verification=BBYnIe0Bry7k0MocsSTo8W7lfse-0eBf7JPp6ewjhi4"
+    ionos: "zone-ownership-verification-bcceb7b436b94447715a17dac850579ff98b553d4635c9bbf7f2690ac7143fdf"
+    redirect: false
+  felixboerner.de:
+    bing: aa2c762e03cc39e06aacd8303168b8a8
+    google: "google-site-verification=1bCV5mZwoJBEgYp9SP53QkjyfKXXx-EgkT4F0Tyg5mk"
+    ionos: "zone-ownership-verification-f00ec03981a8f86d6915a56bebda7a3e596459adc400a791d5e72d3222c4e5b5"
+    redirect: true
+  it-system-engineer.com:
+    bing: 7635e1c3e3b7a8b229cc8bd84a457352
+    google: "google-site-verification=voHxdqTjo3E2lMww_zlxVgMwwAc0vzAsZFeS_JXgN2I"
+    ionos: "zone-ownership-verification-06b8c9fb1d97830d8a9191d01655cfa5124805394cf56402c2547419bcc2db76"
+    redirect: true
+  it-system-engineer.de:
+    bing: 496beb7844e1b1851bb184e4ca86067e
+    google: "google-site-verification=VRl3mwvEWm2inBHMD8xN1dxHs7M5cCch30yjI30lAFY"
+    ionos: "zone-ownership-verification-f0578d3e726fc875e9c525cb28c11808743409e135e26f3f596cb9432ae15fa9"
+    redirect: true
+  it-systems-engineer.com:
+    bing: c7f7db9bf6faae9496a119867dbb6a0c
+    google: "google-site-verification=c_lChVR5oxvSmqrt1_igIq7vsypkODrN0xDOvYlqA_I"
+    ionos: "zone-ownership-verification-59c8dac0b2b4a7f65a9a0ee793710b03f2502a4aa7b31e8497aa1ca730f9331b"
+    redirect: true
+  it-systems-engineer.de:
+    bing: 75e7f3bc6b85aa566253ee57bad3bf99
+    google: "google-site-verification=rqBSLhVTP_O5x6rUQ0Nd-svsUI9SaD19a3feyhMLfDk"
+    ionos: "zone-ownership-verification-38188564ff637314fc5a294622fa91054f06baf198f7a5b06f7ed62ad29eca45"
+    redirect: true
+  nightpanorama.com:
+    bing: 3ccc245a1b49bbb3a51cdac7a86039c0
+    google: "google-site-verification=E2uR0U2QCm7cQdJpQfkBHPx_kMscveBM2BtPCc6TmvM"
+    ionos: "zone-ownership-verification-2c737de5ab59efcd564191ca554a84feeac94aaeddb9fb5d32765b89693d875a"
+    redirect: true
+  nightpanorama.de:
+    bing: 59dee18b57cceb94b78247fd6cf48b4c
+    google: "google-site-verification=ZVbFyarXYCi6NzFhQEhoRQ-8oIpMET6khdgUWM3t87k"
+    ionos: "zone-ownership-verification-b3b261d583ea9314a66cf8babd1d90c6828dae35fef6c069a54696eebd8db504"
+    redirect: true
+  roboboter.com:
+    bing: 939042c34400348595d39ff4b2a955e1
+    google: "google-site-verification=eDFxoooqnrumwFjzTJ2LMg6gyoo6s-Omo_OjpbdZWUQ"
+    ionos: "zone-ownership-verification-e58fb1b0000167392fd82bf8f1b716b79693e4a9797e6e16a7eb901f79866e9b"
+    redirect: true
+  roboboter.de:
+    bing: 3701ae0d50cc4f65b0e9db404b46222b
+    google: "google-site-verification=zJ1nFCsyl8abRNKeLkApjv3fs3h6ujQz0t2js8pW0p0"
+    ionos: "zone-ownership-verification-bae191ea24ab26715b75b3f4a83164ac55a90f75d7a18bc6d44be5373240f854"
+    redirect: true
+  xn--felixbrner-jcb.de:  # felixbörner.de
+    bing: 50fafeaad278ff82f161f4cc786f1aad
+    google: "google-site-verification=zAw60NL3aLWsZQTcBjiMMRa56Nz1XxBoVYLgQ7SPHII"
+    ionos: "zone-ownership-verification-a892d7c4ec4ad63fc8451dab2659ec734a15cd2641a0140c0f7e78895359be7e"
+    redirect: true
+  xn--felix-brner-xfb.de:  # felix-börner.de
+    bing: 5863911505c0ec2b765b3c94d5f882fb
+    google: "google-site-verification=lgVOm67emzvKvjll3qZg_Yx7-3bjVxYZjbpNio8tLdk"
+    ionos: "zone-ownership-verification-616c1f6a92b01bc8d1d95bbf0eb1470102c0d00b3b76f46c052e402a8c861adb"
+    redirect: true

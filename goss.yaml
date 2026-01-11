@@ -1,0 +1,160 @@
+dns:
+{{- range $domain, $values := .Vars.domains}}
+  A:{{$domain}}:
+    resolvable: true
+    server: 1.1.1.1
+  A:www.{{$domain}}:
+    resolvable: true
+    server: 1.1.1.1
+  MX:{{$domain}}:
+    resolvable: true
+    server: 1.1.1.1
+    addrs:
+      - "10 mx00.ionos.de."
+      - "10 mx01.ionos.de."
+  CNAME:{{$values.bing}}.{{$domain}}:
+    resolvable: true
+    server: 1.1.1.1
+    addrs:
+      - "verify.bing.com."
+  CNAME:s1-ionos._domainkey.{{$domain}}:
+    resolvable: true
+    server: 1.1.1.1
+    addrs:
+      - "s1.dkim.ionos.com."
+  CNAME:s2-ionos._domainkey.{{$domain}}:
+    resolvable: true
+    server: 1.1.1.1
+    addrs:
+      - "s2.dkim.ionos.com."
+  CNAME:s42582890._domainkey.{{$domain}}:
+    resolvable: true
+    server: 1.1.1.1
+    addrs:
+      - "s42582890.dkim.ionos.com."
+  CNAME:autodiscover.{{$domain}}:
+    resolvable: true
+    server: 1.1.1.1
+    addrs:
+      - "adsredir.ionos.info."
+  TXT:{{$domain}}:
+    resolvable: true
+    server: 1.1.1.1
+    addrs:
+      - "{{$values.google}}"
+      - "{{$values.ionos}}"
+      - "v=spf1 mx include:_spf-eu.ionos.com include:_spf.google.com -all"
+  TXT:_dmarc.{{$domain}}:
+    resolvable: true
+    server: 1.1.1.1
+    addrs:
+      - "v=DMARC1; p=reject; rua=mailto:report@felix-boerner.de; ruf=mailto:report@felix-boerner.de; adkim=s; aspf=s; fo=0:1;"
+{{if eq $values.redirect false}}
+  TXT:_github-pages-challenge-escalate.{{$domain}}:
+    resolvable: true
+    server: 1.1.1.1
+    addrs:
+      - "61c9dcbf2716da5b661cfea8cd5697"
+{{end}}
+{{end}}
+
+http:
+{{- range $domain, $values := .Vars.domains}}
+{{- if eq $values.redirect true}}
+  http://{{$domain}}:
+    status: 301
+    allow-insecure: false
+    no-follow-redirects: true
+    headers:
+      - "X-Frame-Options: SAMEORIGIN"
+      - "X-Xss-Protection: 1; mode=block"
+      - "X-Content-Type-Options: nosniff"
+  http://www.{{$domain}}:
+    status: 301
+    allow-insecure: false
+    no-follow-redirects: true
+    headers:
+      - "X-Frame-Options: SAMEORIGIN"
+      - "X-Xss-Protection: 1; mode=block"
+      - "X-Content-Type-Options: nosniff"
+  https://{{$domain}}:
+    status: 301
+    allow-insecure: false
+    no-follow-redirects: true
+    headers:
+      - "Strict-Transport-Security: max-age=15552000; includeSubDomains; preload"
+      - "X-Frame-Options: SAMEORIGIN"
+      - "X-Xss-Protection: 1; mode=block"
+      - "X-Content-Type-Options: nosniff"
+  https://www.{{$domain}}:
+    status: 301
+    allow-insecure: false
+    no-follow-redirects: true
+    headers:
+      - "Strict-Transport-Security: max-age=15552000; includeSubDomains; preload"
+      - "X-Frame-Options: SAMEORIGIN"
+      - "X-Xss-Protection: 1; mode=block"
+      - "X-Content-Type-Options: nosniff"
+{{- else}}
+  http://{{$domain}}:
+    status: 301
+    allow-insecure: false
+    no-follow-redirects: true
+    headers:
+      - "X-Frame-Options: SAMEORIGIN"
+      - "X-Xss-Protection: 1; mode=block"
+      - "X-Content-Type-Options: nosniff"
+  http://www.{{$domain}}:
+    status: 301
+    allow-insecure: false
+    no-follow-redirects: true
+    headers:
+      - "X-Frame-Options: SAMEORIGIN"
+      - "X-Xss-Protection: 1; mode=block"
+      - "X-Content-Type-Options: nosniff"
+  https://{{$domain}}:
+    status: 301
+    allow-insecure: false
+    no-follow-redirects: true
+    headers:
+      - "Strict-Transport-Security: max-age=15552000; includeSubDomains; preload"
+      - "X-Frame-Options: SAMEORIGIN"
+      - "X-Xss-Protection: 1; mode=block"
+      - "X-Content-Type-Options: nosniff"
+  https://www.{{$domain}}:
+    status: 200
+    allow-insecure: false
+    no-follow-redirects: true
+    headers:
+      - "Strict-Transport-Security: max-age=15552000; includeSubDomains; preload"
+      - "X-Frame-Options: SAMEORIGIN"
+      - "X-Xss-Protection: 1; mode=block"
+      - "X-Content-Type-Options: nosniff"
+    body:
+      - "Hello my name is Felix"
+{{end}}
+{{end}}
+
+command:
+{{- range $domain, $values := .Vars.domains}}
+  certificate-https-{{$domain}}:
+    exec: "openssl s_client -host {{$domain}} -port 443 -brief -verify_return_error -no_ign_eof </dev/null"
+    exit-status: 0
+    stderr:
+      - CONNECTION ESTABLISHED
+      - '/^Protocol version: TLSv1\.3/'
+      - '/CN = {{$domain}}/'
+      - '/Verification: OK/'
+      - DONE
+      - '!/error/'
+  certificate-https-www-{{$domain}}:
+    exec: "openssl s_client -host www.{{$domain}} -port 443 -brief -verify_return_error -no_ign_eof </dev/null"
+    exit-status: 0
+    stderr:
+      - CONNECTION ESTABLISHED
+      - '/^Protocol version: TLSv1\.3/'
+      - '/CN = {{$domain}}/'
+      - '/Verification: OK/'
+      - DONE
+      - '!/error/'
+{{end}}
